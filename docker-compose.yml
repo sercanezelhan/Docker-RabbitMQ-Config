@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+  rabbitmq:
+    image: "rabbitmq:3.7.3-management"
+    ports:
+      - '18005:15672'
+      - '18004:5672'
+    volumes:
+      - ./definitions.json:/opt/definitions.json:ro
+      - ./rabbitmq.conf:/etc/rabbitmq/rabbitmq.config
